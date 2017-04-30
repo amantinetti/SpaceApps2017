@@ -15,8 +15,8 @@
     <script src="{{ asset('/js/skel-panels.min.js') }}"></script>
     <script src="{{ asset('/js/init.js') }}"></script>
     <noscript>
-        <link rel="stylesheet" href="http://hamiltons.manti.cl/css/skel-noscript.css" />
-        <link rel="stylesheet" href="http://hamiltons.manti.cl/css/style.css" />
+        <link rel="stylesheet" href="{{ asset('/css/skel-noscript.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('/css/ie/v8.css') }}" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="{{ asset('/css/ie/v9.css') }}" /><![endif]-->
