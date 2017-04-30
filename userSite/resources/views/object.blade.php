@@ -8,7 +8,7 @@
 
             <!-- Logo -->
             <div id="logo">
-                <h1><a href="#">H4m1lt0n's</a></h1>
+                <h1><a href="#">HAMILTON'S</a></h1>
                 <span>A Space Object Finder</span>
             </div>
 
