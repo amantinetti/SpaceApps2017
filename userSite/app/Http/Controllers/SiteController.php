@@ -9,6 +9,8 @@ use App\SpaceObject;
 use App\Type;
 use App\ObjProp;
 use App\Property;
+use Log;
+use App\Http\Controllers\IndexingController;
 
 class SiteController extends Controller{
 
@@ -26,5 +28,14 @@ class SiteController extends Controller{
         $send->type=$type;
         $send->properties = $pdata;
         return view("object")->with('content', $send);
+    }
+
+    public function search(Request $request){
+        Log::info('SuperRequest->' . $request);
+        $searched = $request['sc'];
+        $in = new IndexingController();
+        $list = $in->search($searched);
+        Log::info('SuperList->' . $list);
+        return redirect('obj/'. $list['id']);
     }
 }

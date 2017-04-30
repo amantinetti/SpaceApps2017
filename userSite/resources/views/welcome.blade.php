@@ -12,10 +12,10 @@
             </div>
 
             <!-- Nav -->
-            <form id="searchForm" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
+            <form id="searchForm" enctype="multipart/form-data" role="form" method="GET" action="{{ url('api/search') }}">
                 <nav id="nav">
                     <ul>
-                        <li><input id="searchHam" type="text" placeholder="Search"></li>
+                        <li><input id="searchHam" name="sc" type="text" placeholder="Search"></li>
                     </ul>
                 </nav>
                 <input type="submit" hidden="true" />

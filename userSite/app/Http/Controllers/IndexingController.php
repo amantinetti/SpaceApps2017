@@ -64,7 +64,7 @@ class IndexingController extends Controller{
 
         }
         $list = collect($list)->sortByDesc('matches')->toArray();
-        return $list;
+        return $list[0]['space_object_id'];
 
     }
 
@@ -80,15 +80,14 @@ class IndexingController extends Controller{
                     'pos' => $subindex->pos
                 ]);
             }
-
         }
 
         $id = $this->perfect($indexes,$arr);
         if($id > 0)
             return SpaceObject::find($id);
-        $list = $this->notPerfect($indexes, $arr);
+        $id = $this->notPerfect($indexes, $arr);
 
-        return $list;
+        return SpaceObject::find($id);
     }
 
     public function runIndex($inputObj){
