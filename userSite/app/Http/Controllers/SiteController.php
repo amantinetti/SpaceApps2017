@@ -10,6 +10,7 @@ use App\Type;
 use App\ObjProp;
 use App\Property;
 use Log;
+use App\Http\Controllers\IndexingController;
 
 class SiteController extends Controller{
 
@@ -32,7 +33,8 @@ class SiteController extends Controller{
     public function search(Request $request){
         Log::info('SuperRequest->' . $request);
         $searched = $request['sc'];
-        Log::info('SuperSC->' . $request['sc']);
-        return view('searched');
+        $in = new IndexingController();
+        $list = $in->search($searched);
+        return redirect('obj/'. $list[0]['space_object_id']);
     }
 }
