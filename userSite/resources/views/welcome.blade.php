@@ -25,6 +25,21 @@
 
         <title>Laravel</title>
 
+        <style>
+            #searchHam {
+                background: black;
+                border: black;
+                color: white;
+                border-color: black;
+            }
+            #searchHam:focus {
+                background: black;
+                border: black;
+                color: white;
+                border-color: black;
+            }
+        </style>
+
     </head>
     <body class="homepage">
 
@@ -39,11 +54,11 @@
             </div>
 
             <!-- Nav -->
-            <nav id="nav">
+            <nav id="nav" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
                 <ul>
-                    <form id="search" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
                     <li><input type="text" placeholder="Search"></li>
                 </ul>
+                <input type="submit" hidden="true" />
             </nav>
 
         </div>
