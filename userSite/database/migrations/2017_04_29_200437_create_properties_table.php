@@ -15,7 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name',150)->index();
             $table->string('detail');
             $table->boolean('if_unique');
             $table->integer('points');

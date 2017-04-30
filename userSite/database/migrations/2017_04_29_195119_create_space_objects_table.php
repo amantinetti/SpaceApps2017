@@ -9,7 +9,7 @@ class CreateSpaceObjectsTable extends Migration{
     public function up(){
         Schema::create('space_objects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',255);
+            $table->string('name',150)->index();
             $table->integer('type_id');
             $table->timestamps();
         });

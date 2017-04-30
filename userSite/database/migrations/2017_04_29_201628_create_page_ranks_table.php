@@ -15,7 +15,7 @@ class CreatePageRanksTable extends Migration
     {
         Schema::create('page_ranks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('page',255)->unique();
+            $table->string('page',150)->unique();
             $table->integer('points');
             $table->timestamps();
         });
