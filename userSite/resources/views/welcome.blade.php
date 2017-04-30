@@ -35,25 +35,25 @@
                 <div class="3u">
                     <section>
                         <a href="#" class="image full"><img src="images/pics01.jpg" width="90" height="150" alt="" /></a>
-                        <a href="{{ url('/exoplanets')}}" class="button">Exoplanetas</a>
+                        <a href="{{ url('/exoplanets')}}" class="button">Exoplanets</a>
                     </section>
                 </div>
                 <div class="3u">
                     <section>
                         <a href="#" class="image full"><img src="images/pics11.jpg" width="90" height="150" alt="" /></a>
-                        <a href="{{ url('/galaxies')}}" class="button">Galaxias</a>
+                        <a href="{{ url('/galaxies')}}" class="button">Galaxys</a>
                     </section>
                 </div>
                 <div class="3u">
                     <section>
                         <a href="#" class="image full"><img src="images/pics12.jpg" width="90" height="150" alt="" /></a>
-                        <a href="{{ url('/stars')}}" class="button">Estrellas</a>
+                        <a href="{{ url('/stars')}}" class="button">Stars</a>
                     </section>
                 </div>
                 <div class="3u">
                     <section>
                         <a href="#" class="image full"><img src="images/pics13.jpg" width="90" height="150" alt="" /></a>
-                        <a href="{{ url('/solar_systems')}}" class="button">Sistemas Solares</a>
+                        <a href="{{ url('/solar_systems')}}" class="button">Solar Systems</a>
                     </section>
                 </div>
             </div>
