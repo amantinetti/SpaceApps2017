@@ -1,23 +1,34 @@
 import scrapy
+# from Star import Star
 
 
 class StarsSpider(scrapy.Spider):
 
-    name = 'Stars'
+    name = 'stars'
+    start_urls = [ 'https://en.wikipedia.org/wiki/List_of_stars_in_Andromeda']
 
-    def __init__(self, query=None, *args, **kwargs):
-        super(StarsSpider, self).__init__(*args, **kwargs)
-        self.start_urls = [
-            'https://www.google.com/search?as_epq=%s&ie=utf-8&oe=utf-8' %query
-            ]
-
+    # def parse(self, response):
+    #     for href in response.css('table.multicol').css('li').css('a::attr(href)').extract():
+    #         yield scrapy.Request(response.urljoin(href), callback=self.parse_star)
+    #
     def parse(self, response):
-        #response = response.css('div.srg')
-        for href in response.css('div.g').css('a:attr(href)').extract():
-            yield scrapy.Request(response.urljoin(href), callback=self.parse_page)
+        for url in response.css('table.wikitable').css('tr').css('a::attr(href)').extract():
+            yield scrapy.Request(response.urljoin(url), callback=self.parse_star)
 
-    def parse_page(self, response):
-        for paragraph in response.css('p'):
+    def parse_star(self, response):
+        name = response.css('h1#firstHeading.firstHeading::text').extract()
+        for member in response.css('table.infobox').css('tr'):
+            value = member.css('td').css('a::text').extract()
+            proper = member.css('th').css('a::text').extract()
+            if len(value) != 1:
+                value = member.css('td::text').extract()
+            if len(proper) !=1:
+                proper =member.css('th::text').extract()
+            if len(value) == 0 or len(proper) == 0:
+                continue
             yield{
-                'paragraph' : paragraph.css('p::text').extract()
+                'name': name,
+                'property': proper,
+                'value': value,
+
             }
