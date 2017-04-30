@@ -20,7 +20,10 @@ class SiteController extends Controller{
         $data = $obj->Properties()->get();
         $pdata = array();
         foreach ($data as $d){
-            $prop = Property::where('id',$d->property_id)->first()->value('name');
+            echo "prop id->".$d->property_id."\n";
+            $proper = Property::find($d->property_id);
+            $prop = $proper->name;
+            echo "prop name->".$prop."\n";
             $na= array( 'name'=>$prop, 'value'=>$d->value);
             array_push($pdata,$na);
         }
