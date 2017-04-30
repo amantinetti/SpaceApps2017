@@ -3,216 +3,199 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="{{ asset('css/mainP.css') }}" type="text/css" />
-        <!--[if lte IE 8]><script src="{{ asset('js/ie/html5shiv.js') }}"></script><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="{{ asset('css/ie9.css') }}" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('css/ie8.css') }}" /><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{{ asset('js/skel.min.js') }}"></script>
+        <script src="{{ asset('js/skel-panels.min.js') }}"></script>
+        <script src="{{ asset('js/js/init.js') }}"></script>
+        <noscript>
+            <link rel="stylesheet" href="{{ asset('css/skel-noscript.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('css/ie/v8.css') }}" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="{{ asset('css/ie/v9.css') }}" /><![endif]-->
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
     </head>
-    <body>
-        <!-- Wrapper -->
-        <div id="wrapper">
+    <body class="homepage">
 
-            <!-- Header -->
-            <header id="header" class="alt">
-                <a href="{{ url('/') }}" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-                <nav>
-                    <a href="#menu">Menu</a>
-                </nav>
-            </header>
+    <!-- Header -->
+    <div id="header">
+        <div class="container">
 
-            <!-- Menu -->
-            <nav id="menu">
-                <ul class="links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="landing.html">Landing</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                </ul>
-                <ul class="actions vertical">
-                    <li><a href="#" class="button special fit">Get Started</a></li>
-                    <li><a href="#" class="button fit">Log In</a></li>
+            <!-- Logo -->
+            <div id="logo">
+                <h1><a href="#">H4m1lt0n</a></h1>
+                <span>Design by TEMPLATED</span>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <form id="search" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
+                    <li><input type="text" placeholder="Search"></li>
                 </ul>
             </nav>
 
-            <!-- Banner -->
-            <section id="banner" class="major">
-                <div class="inner">
-                    <header class="major">
-                        <h1>Hi, my name is Forty</h1>
-                    </header>
-                    <div class="content">
-                        <p>A responsive site template designed by HTML5 UP<br />
-                            and released under the Creative Commons.</p>
-                        <ul class="actions">
-                            <li><a href="#one" class="button next scrolly">Get Started</a></li>
-                        </ul>
-                    </div>
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <header>
+                <h2>Gravida nibh quis urna</h2>
+            </header>
+            <div class="row">
+                <div class="3u">
+                    <section>
+                        <a href="#" class="image full"><img src="images/pics01.jpg" alt="" /></a>
+                        <p>Quisque dictum. Pellentesque viverra  enim. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                        <a href="#" class="button">Read More</a>
+                    </section>
                 </div>
-            </section>
+                <div class="3u">
+                    <section>
+                        <a href="#" class="image full"><img src="images/pics11.jpg" alt="" /></a>
+                        <p>Pellentesque viverra  enim. Tristique ante ut risus. Quisque dictum. Integer sagittis convallis elementum.</p>
+                        <a href="#" class="button">Read More</a>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <a href="#" class="image full"><img src="images/pics12.jpg" alt="" /></a>
+                        <p>Pellentesque viverra  enim. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                        <a href="#" class="button">Read More</a>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <a href="#" class="image full"><img src="images/pics13.jpg" alt="" /></a>
+                        <p>Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis elementum.</p>
+                        <a href="#" class="button">Read More</a>
+                    </section>
+                </div>
+            </div>
+            <div class="divider">&nbsp;</div>
+            <div class="row">
 
-            <!-- Main -->
-            <div id="main">
+                <!-- Content -->
+                <div class="8u skel-cell-important">
+                    <section id="content">
+                        <header>
+                            <h2>Integer gravida nibh quis urna</h2>
+                            <span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum</span>
+                        </header>
+                        <p><a href="#" class="image full"><img src="images/pics02.jpg" alt=""></a></p>
+                        <p>This is <strong>Monochromed</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+                        <a href="#" class="button">Read More</a>
+                    </section>
+                </div>
+                <!-- /Content -->
 
-                <!-- One -->
-                <section id="one" class="tiles">
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic01.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Aliquam</a></h3>
-                            <p>Ipsum dolor sit amet</p>
+                <!-- Sidebar -->
+                <div id="sidebar" class="4u">
+                    <section>
+                        <header>
+                            <h2>Gravida praesent</h2>
+                            <span class="byline">Praesent lacus congue rutrum</span>
                         </header>
-                    </article>
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic02.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Tempus</a></h3>
-                            <p>feugiat amet tempus</p>
-                        </header>
-                    </article>
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic03.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Magna</a></h3>
-                            <p>Lorem etiam nullam</p>
-                        </header>
-                    </article>
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic04.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Ipsum</a></h3>
-                            <p>Nisl sed aliquam</p>
-                        </header>
-                    </article>
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic05.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Consequat</a></h3>
-                            <p>Ipsum dolor sit amet</p>
-                        </header>
-                    </article>
-                    <article>
-                                        <span class="image">
-                                            <img src="images/pic06.jpg" alt="" />
-                                        </span>
-                        <header class="major">
-                            <h3><a href="landing.html" class="link">Etiam</a></h3>
-                            <p>Feugiat amet tempus</p>
-                        </header>
-                    </article>
-                </section>
-
-                <!-- Two -->
-                <section id="two">
-                    <div class="inner">
-                        <header class="major">
-                            <h2>Massa libero</h2>
-                        </header>
-                        <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-                        <ul class="actions">
-                            <li><a href="landing.html" class="button next">Get Started</a></li>
+                        <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Maecenas luctus lectus at sapien. Consectetuer adipiscing elit.</p>
+                        <ul class="default">
+                            <li><a href="#">Pellentesque quis lectus gravida blandit.</a></li>
+                            <li><a href="#">Lorem ipsum consectetuer adipiscing elit.</a></li>
+                            <li><a href="#">Phasellus nec nibh pellentesque congue.</a></li>
+                            <li><a href="#">Cras aliquam risus pellentesque pharetra.</a></li>
+                            <li><a href="#">Duis non metus commodo euismod lobortis.</a></li>
+                            <li><a href="#">Lorem ipsum dolor adipiscing elit.</a></li>
                         </ul>
-                    </div>
-                </section>
+                    </section>
+                </div>
+                <!-- Sidebar -->
 
             </div>
 
-            <!-- Contact -->
-            <section id="contact">
-                <div class="inner">
-                    <section>
-                        <form method="post" action="#">
-                            <div class="field half first">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" id="name" />
-                            </div>
-                            <div class="field half">
-                                <label for="email">Email</label>
-                                <input type="text" name="email" id="email" />
-                            </div>
-                            <div class="field">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" rows="6"></textarea>
-                            </div>
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" class="special" /></li>
-                                <li><input type="reset" value="Clear" /></li>
-                            </ul>
-                        </form>
-                    </section>
-                    <section class="split">
-                        <section>
-                            <div class="contact-method">
-                                <span class="icon alt fa-envelope"></span>
-                                <h3>Email</h3>
-                                <a href="#">information@untitled.tld</a>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="contact-method">
-                                <span class="icon alt fa-phone"></span>
-                                <h3>Phone</h3>
-                                <span>(000) 000-0000 x12387</span>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="contact-method">
-                                <span class="icon alt fa-home"></span>
-                                <h3>Address</h3>
-                                <span>1234 Somewhere Road #5432<br />
-                                            Nashville, TN 00000<br />
-                                            United States of America</span>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer id="footer">
-                <div class="inner">
-                    <ul class="icons">
-                        <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                        <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    </ul>
-                    <ul class="copyright">
-                        <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                    </ul>
-                </div>
-            </footer>
-
         </div>
+    </div>
+    <!-- Main -->
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.scrolly.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.scrollex.min.js') }}"></script>
-        <script src="{{ asset('js/skel.min.js') }}"></script>
-        <script src="{{ asset('js/util.js') }}"></script>
-        <!--[if lte IE 8]><script src="{{ asset('js/ie/respond.min.js') }}"></script><![endif]-->
-        <script src="{{ asset('js/main.js') }}"></script>
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="3u">
+                    <section>
+                        <ul class="style1">
+                            <li><img src="images/pics05.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                            <li><img src="images/pics06.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                            <li><img src="images/pics07.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <ul class="style1">
+                            <li class="first"><img src="images/pics08.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                            <li><img src="images/pics09.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                            <li><img src="images/pics10.jpg" width="78" height="78" alt="">
+                                <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+                                <p class="posted">August 11, 2014  |  (10 )  Comments</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="6u">
+                    <section>
+                        <header>
+                            <h2>Aenean elementum</h2>
+                        </header>
+                        <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus.</p>
+                        <ul class="default">
+                            <li><a href="#">Pellentesque quis lectus gravida blandit.</a></li>
+                            <li><a href="#">Lorem ipsum consectetuer adipiscing elit.</a></li>
+                            <li><a href="#">Phasellus nec nibh pellentesque congue.</a></li>
+                            <li><a href="#">Cras aliquam risus pellentesque pharetra.</a></li>
+                            <li><a href="#">Duis non metus commodo euismod lobortis.</a></li>
+                            <li><a href="#">Lorem ipsum dolor adipiscing elit.</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <div class="container">
+            <a href="{{url('/')}}">H4m1lt0n's</a> 2017. All Rights Reserved
+        </div>
+    </div>
 
     </body>
 </html>
