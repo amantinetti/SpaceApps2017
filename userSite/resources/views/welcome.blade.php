@@ -55,14 +55,14 @@
             </div>
 
             <!-- Nav -->
-            <nav id="nav">
-                <form id="searchForm" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}"
-                    <ul>
-                        <li><input id="searchHam" type="text" placeholder="Search"></li>
-                    </ul>
-                    <input type="submit" hidden="true" />
-                </form>
-            </nav>
+            <form id="searchForm" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
+                <nav id="nav">
+                        <ul>
+                            <li><input id="searchHam" type="text" placeholder="Search"></li>
+                        </ul>
+                </nav>
+                <input type="submit" hidden="true" />
+            </form>
 
         </div>
     </div>
