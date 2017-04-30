@@ -2,22 +2,35 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\RevIndex;
-//use App\SpaceObject;
-//use App\SendObj;
+use App\SpaceObject;
+use App\SendObj;
+use App\Http\Controllers\InputRankingController;
 
 class IndexingController extends Controller{
 
 
-//    public function search($string){
-//        $arr = explode(" ",$string);
-//
-//    }
+    public function search($string){
+        $arr = explode(" ",$string);
+        for($i=0;i<count($arr);$i++){
+            $index = RevIndex::find('word',$arr[$i]);
+        }
+    }
 
-    public function parse_object($object)
-    {
+    public function runIndex($inputObj){
+        $rankingController = new InputRankingController();
+        $id = $rankingController->Algoritm($inputObj);
+        if($id<0)
+            return;
+        $obj = SpaceObject::find($id);
+        $data = $this->parse_object($obj);
+        $this->insertIndex($data,$id);
+    }
+
+    public function parse_object($object){
+
         $type = $object->Type()->first();
         $properties = $object->Properties()->get();
         $parsed_data = array();
