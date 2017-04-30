@@ -8,7 +8,7 @@
                 <h2>Two Sidebars</h2>
                 <span class="byline">Praesent lacus at urna congue rutrum</span>
               </header>
-              <p><a href="#" class="image full"><img src="images/pics02.jpg" alt=""></a></p>
+              <p><a href="#" class="image full"><img src="{{asset('images/pics02.jpg')}}" alt=""></a></p>
             </section>
           </div>
         <!-- /Content -->
