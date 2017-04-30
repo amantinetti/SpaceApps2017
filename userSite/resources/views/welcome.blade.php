@@ -33,6 +33,7 @@
                 border-color: black;
             }
             #searchHam:focus {
+                outline: none !important;
                 background: black;
                 border: black;
                 color: white;
@@ -56,7 +57,7 @@
             <!-- Nav -->
             <nav id="nav" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
                 <ul>
-                    <li><input type="text" placeholder="Search"></li>
+                    <li><input id="searchHam" type="text" placeholder="Search"></li>
                 </ul>
                 <input type="submit" hidden="true" />
             </nav>
