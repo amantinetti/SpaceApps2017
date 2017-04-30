@@ -13,7 +13,7 @@ class InputRankingController extends Controller{
 
         $mod = false;
         $id = -1;
-        if($puntos = DB::Table('page_rank')->where('page',$objeto->page)->value('points')){
+        if($puntos = DB::Table('page_ranks')->where('page',$objeto->page)->value('points')){
             if($id = DB::Table('objeto')->where('name',$objeto->name)->value('id')){
                 foreach ($objeto->properties as $prop) {
                     $value=$objeto->value;
