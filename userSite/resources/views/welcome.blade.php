@@ -59,7 +59,7 @@
             <form id="searchForm" enctype="multipart/form-data" role="form" method="POST" action="{{ url('api/search') }}">
                 <nav id="nav">
                         <ul>
-                            <li><input id="searchHam" type="text" placeholder="Search"></li>
+                            <li><p><input id="searchHam" type="text" placeholder="Search"><span class="glyphicon glyphicon-search"></span></p></li>
                         </ul>
                 </nav>
                 <input type="submit" hidden="true" />
