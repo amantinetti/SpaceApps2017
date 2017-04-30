@@ -173,8 +173,22 @@ class IndexingController extends Controller{
                 //echo $property ."\n";
                 $value = $prop->value[0];
                 //print_r($prop->value);
-                if(is_array($value))
-                    $value = $value[0];
+                if(is_array($value)){
+                    $tv="";
+                    foreach ($value as $v){
+                        if(is_array($v)){
+                            foreach ($value as $v2){
+                                if(is_array($v2)){
+                                    $tv = $tv . " " . implode(" ",$v2);
+                                }else
+                                    $tv = $tv ." ". $v2;
+                            }
+                        }else
+                            $tv = $tv ." ". $v;
+                    }
+                    $value = $tv;
+                }
+                    //$value = implode(" ",$value);
                 //echo $value ."\n";
                 if(array_key_exists($name, $objarray)){
                     $p = array("name"=>$property,"value"=>$value);
@@ -198,11 +212,13 @@ class IndexingController extends Controller{
                     $objarray[$name] = $obj;
                 }
             }
-
+            $i=0;
             foreach ($objarray as $obj){
+                $i++;
                 echo "Running Index ->".$obj->name ."\n";
                 $this->runIndex($obj);
             }
+            echo "Full Index ".$i."elements\n";
             return true;
         }
         return false;
