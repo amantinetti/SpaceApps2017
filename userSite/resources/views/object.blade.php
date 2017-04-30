@@ -19,17 +19,20 @@
     <!-- Main -->
     <div id="main">
         <div class="container">
-            <header>
+            {{--<header>
                 <h2>{{$content->name}}</h2>
                 <h4>{{$content->type}}</h4>
-            </header>
+            </header>--}}
             <div class="row">
-                <div class="4u">
+                <div class="col-md-4">
                     <section>
+                        <p></p>
                     </section>
                 </div>
-                <div class="4u">
+                <div class="col-md-4">
                     <section>
+                        <h2>{{$content->name}}</h2>
+                        <h4>{{$content->type}}</h4>
                        <ul>
                            @foreach($content->properties as $prop)
                            <li> {{$prop['name']}} : {{$prop['value']}} </li>
@@ -37,8 +40,9 @@
                        </ul>
                     </section>
                 </div>
-                <div class="4u">
+                <div class="col-md-4">
                     <section>
+                        <p></p>
                     </section>
                 </div>
 
