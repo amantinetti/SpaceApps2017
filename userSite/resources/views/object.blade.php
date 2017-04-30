@@ -20,22 +20,25 @@
     <div id="main">
         <div class="container">
             <header>
-                <h2>Gravida nibh quis urna</h2>
+                <h2>{{$content->name}}</h2>
+                <h4>{{$content->type}}</h4>
             </header>
             <div class="row">
-                <div class="3u">
+                <div class="4u">
                     <section>
-
                     </section>
                 </div>
-                <div class="6u">
+                <div class="4u">
                     <section>
-                       <p>Mostrar Nombre Dato y Valor</p>
+                       <ul>
+                           @foreach($content->properties as $prop)
+                           <li> {{$prop['name']}} : {{$prop['value']}} </li>
+                           @endforeach
+                       </ul>
                     </section>
                 </div>
-                <div class="3u">
+                <div class="4u">
                     <section>
-
                     </section>
                 </div>
 
