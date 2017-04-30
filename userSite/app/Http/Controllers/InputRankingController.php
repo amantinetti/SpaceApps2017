@@ -12,7 +12,7 @@ class InputRankingController extends Controller{
 
 
     function testData(){
-      $p = array("tamaño"=>'200');
+      $p = array("name"=>'tamaño',"value"=>'200');
       $obj = new SendObj();
       $obj->name="sol";
       $obj->page="test.cl";
@@ -20,19 +20,21 @@ class InputRankingController extends Controller{
       return $obj;
     }
 
+
+
     function Algoritm($objeto){
 
         $mod = false;
-        $id = -1;
+        $id = -10;
         if($puntos = DB::Table('page_ranks')->where('page',$objeto->page)->value('points')){
             if($id = DB::Table('space_objects')->where('name',$objeto->name)->value('id')){
                 foreach ($objeto->properties as $prop) {
-                    $value=$objeto->value;
-                    $propid=DB::Table('properties')->where('name',$prop['name'])->value('id');
+                    $value=$prop['value'];
+                    $propid = DB::Table('properties')->where('name',$prop['name'])->value('id');
                     if(DB::Table('properties')->where('name',$prop['name'])->value('name')){
                         $pointbase = ObjProp::where([
                             [ 'space_object_id', $id],
-                            [ 'property_id', $propid]]);
+                            [ 'property_id', $propid]])->first();
                         if($puntos>$pointbase->points){
                             $pointbase->points = $puntos;
                             $pointbase->value= $value;
