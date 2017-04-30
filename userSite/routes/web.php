@@ -16,3 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('obj/{obj_id}', 'SiteController@object');
+
+Route::get('/exoplanets', 'HomeController@exoplanet');
+
+Route::get('/stars', 'HomeController@stars');
+
+Route::get('/solar_systems', 'HomeController@solar_system');
+
+Route::get('/galaxies', 'HomeController@galaxies');
+
+
