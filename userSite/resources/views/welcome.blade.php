@@ -12,7 +12,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{{ asset('js/skel.min.js') }}"></script>
         <script src="{{ asset('js/skel-panels.min.js') }}"></script>
-        <script src="{{ asset('js/js/init.js') }}"></script>
+        <script src="{{ asset('js/init.js') }}"></script>
         <noscript>
             <link rel="stylesheet" href="{{ asset('css/skel-noscript.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
