@@ -15,7 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/obj', function () {
-    return view('object');
-});
-
+Route::get('obj/{obj_id}', 'SiteController@object');
