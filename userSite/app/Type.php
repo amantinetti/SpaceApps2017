@@ -11,6 +11,6 @@ class Type extends Model{
     ];
 
     public function SpaceObjects(){
-        return $this->belongsToMany('App\SpaceObject','id','type_id');
+        return $this->hasMany('App\SpaceObject','type_id','id');
     }
 }

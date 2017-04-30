@@ -13,9 +13,9 @@ class ObjProp extends Model{
     ];
 
     public function SpaceObject(){
-        return $this->belongsTo('App\SpaceObject','id','space_object_id');
+        return $this->belongsTo('App\SpaceObject','space_object_id','id');
     }
     public function Property(){
-        return $this->belongsTo('App\Property','id','property_id');
+        return $this->belongsTo('App\Property','property_id','id');
     }
 }
