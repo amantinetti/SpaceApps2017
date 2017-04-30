@@ -9,7 +9,7 @@ use App\Property;
 class ObjProp extends Model{
 
     protected $fillable = [
-        'id', 'space_object_id', 'property_id', 'value', 'points'
+        'space_object_id', 'property_id', 'value', 'points'
     ];
 
     public function SpaceObject(){

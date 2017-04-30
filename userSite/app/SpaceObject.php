@@ -11,7 +11,7 @@ class SpaceObject extends Model{
     protected $table = 'space_objects';
 
     protected $fillable = [
-        'name', 'type_id', 'id'
+        'name', 'type_id'
     ];
 
     public function Properties(){

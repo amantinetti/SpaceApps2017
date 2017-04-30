@@ -11,7 +11,7 @@ class Property extends Model{
     ];
 
     protected $fillable = [
-        'id', 'name', 'detail', 'if_unique', 'points'
+        'name', 'detail', 'if_unique', 'points'
     ];
 
     public function ObjProps(){

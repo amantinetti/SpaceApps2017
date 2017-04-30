@@ -8,6 +8,10 @@ use App\RevIndex;
 use App\SpaceObject;
 use App\SendObj;
 use App\Http\Controllers\InputRankingController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 class IndexingController extends Controller{
 
@@ -95,6 +99,7 @@ class IndexingController extends Controller{
         $id = $rankingController->Algoritm($inputObj);
         if($id<0)
             return;
+        echo "Object Update id->" .$id."\n";
         $obj = SpaceObject::find($id);
         $data = $this->parse_object($obj);
         $this->insertIndex($data,$id);
@@ -137,6 +142,70 @@ class IndexingController extends Controller{
                 'space_object_id' => $object_id,
             ]);
         }
+    }
+
+    /*use App\Http\Controllers\IndexingController;
+    $in = new IndexingController();
+    $in->indexFileJson("test.json");*/
+
+
+    public function indexFileJson($file){
+        $path = storage_path() . '/app/index/' . $file;
+
+        if (File::exists($path)) {
+            $fileRead = File::get($path);
+
+            $objarray = array();
+
+            $json = json_decode($fileRead);
+            $page = $json->page;
+            $type = $json->type;
+            foreach ($json->Data as $prop){
+                $name = $prop->name[0];
+                //print_r($prop->name);
+                if(is_array($name))
+                    $name = $name[0];
+                //echo $name ."\n";
+                $property = $prop->property[0];
+                //print_r($prop->property);
+                if(is_array($property))
+                    $property = $property[0];
+                //echo $property ."\n";
+                $value = $prop->value[0];
+                //print_r($prop->value);
+                if(is_array($value))
+                    $value = $value[0];
+                //echo $value ."\n";
+                if(array_key_exists($name, $objarray)){
+                    $p = array("name"=>$property,"value"=>$value);
+                    //echo "---------------\n";
+                    //print_r($objarray[$name]->properties);
+                    //print_r($p);
+                    $prop = $objarray[$name]->properties;
+                    //print_r($prop);
+                    $n = count($prop);
+                    $prop[$n]=$p;
+                    $objarray[$name]->properties = $prop;
+                    //array_push($objarray[$name]->properties, $p);
+                }else{
+                    echo "Creating New Object->".$name."\n";
+                    $p = array("name"=>$property,"value"=>$value);
+                    $obj = new SendObj();
+                    $obj->name = $name;
+                    $obj->page = $page;
+                    $obj->type = $type;
+                    $obj->properties = [$p];
+                    $objarray[$name] = $obj;
+                }
+            }
+
+            foreach ($objarray as $obj){
+                echo "Running Index ->".$obj->name ."\n";
+                $this->runIndex($obj);
+            }
+            return true;
+        }
+        return false;
     }
 
 }
