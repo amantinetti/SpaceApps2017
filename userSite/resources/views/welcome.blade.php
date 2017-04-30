@@ -10,6 +10,7 @@
         <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="{{ asset('js/skel.min.js') }}"></script>
         <script src="{{ asset('js/skel-panels.min.js') }}"></script>
         <script src="{{ asset('js/init.js') }}"></script>
