@@ -35,6 +35,7 @@ class SiteController extends Controller{
         $searched = $request['sc'];
         $in = new IndexingController();
         $list = $in->search($searched);
+        Log::info('SuperList->' . $list);
         return redirect('obj/'. $list[0]['space_object_id']);
     }
 }
