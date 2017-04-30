@@ -32,6 +32,7 @@ class SiteController extends Controller{
     public function search(Request $request){
         Log::info('SuperRequest->' . $request);
         $searched = $request['sc'];
+        Log::info('SuperSC->' . $request['sc']);
         return view('searched');
     }
 }
