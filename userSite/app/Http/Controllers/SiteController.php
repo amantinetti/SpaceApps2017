@@ -9,6 +9,7 @@ use App\SpaceObject;
 use App\Type;
 use App\ObjProp;
 use App\Property;
+use Log;
 
 class SiteController extends Controller{
 
@@ -26,5 +27,10 @@ class SiteController extends Controller{
         $send->type=$type;
         $send->properties = $pdata;
         return view("object")->with('content', $send);
+    }
+
+    public function search(Request $request){
+        g::info('SuperRequest->' . $request);
+        return view('searched');
     }
 }
