@@ -46,6 +46,8 @@
 <body class="homepage">
 
 
+@yield('content')
+
 <!-- Footer -->
 
 <!-- Copyright -->
