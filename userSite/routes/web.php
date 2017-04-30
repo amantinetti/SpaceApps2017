@@ -25,6 +25,6 @@ Route::get('/solar_systems', 'HomeController@solar_system');
 
 Route::get('/galaxies', 'HomeController@galaxies');
 
-Route::get('/api/search','SiteController@object');
+Route::get('/api/search','SiteController@search');
 
 
